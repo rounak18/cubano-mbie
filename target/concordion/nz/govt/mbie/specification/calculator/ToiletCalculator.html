@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:concordion="http://www.concordion.org/2007/concordion"><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><style>* {
+  font-family: Arial;
+}
+body {
+  padding: 32px;  
+}
+pre {
+  padding: 6px 28px 6px 28px;
+  background-color: #E8EEF7;
+}
+pre, pre *, code, code *, kbd {
+  font-family: Courier New, Courier;
+  font-size: 10pt;
+}
+h1, h1 * {
+  font-size: 24pt;	
+}
+p, td, th, li, .breadcrumbs {
+  font-size: 10pt;
+}
+p, li {
+  line-height: 140%;
+  max-width: 720px;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 8px 0px 8px 0px;
+}
+th, td {
+  border: 1px solid black;
+  padding: 3px;
+}
+td {
+  background-color: white;
+  vertical-align: top;
+}
+th {
+  background-color: #C3D9FF;
+}
+li {
+  margin-top: 6px;
+  margin-bottom: 6px; 
+}
+
+.example, :not(th)[concordion\:example] {
+  padding: 6px 16px 6px 16px;
+  border: 1px solid #C3D9FF;
+  margin: 6px 0px 28px 0px;
+  background-color: #F5F9FD;
+}
+.example h3, [concordion\:example] h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12pt;
+}
+
+p.success {
+  padding: 2px;
+}
+.success, .success * {
+  background-color: #afa !important;
+}
+.success pre {
+  background-color: #bbffbb;
+}
+.failure, .failure * {
+  background-color: #ffb0b0;
+  padding: 1px;
+}
+.failure .expected {
+  text-decoration: line-through;
+  color: #bb5050;
+}
+.ignored, .ignored * {
+  background-color: #f0f0f0 !important;	
+}
+
+ins {
+  text-decoration: none;	
+}
+
+.exceptionMessage {
+  background-color: #fdd;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 10pt;
+  display: block;
+  font-weight: normal;
+  padding: 4px;
+  text-decoration: none !important;
+}
+.stackTrace, .stackTrace * {
+  font-weight: normal;
+}
+.stackTrace {
+  display: none;
+  padding: 1px 4px 4px 4px;
+  background-color: #fdd;
+  border-top: 1px dotted black;
+}
+.stackTraceExceptionMessage {
+  display: block;
+  font-family: Courier New, Courier, Monospace;
+  font-size: 8pt;
+  white-space: wrap;
+  padding: 1px 0px 1px 0px;
+}
+.stackTraceEntry {
+  white-space: nowrap;
+  font-family: Courier New, Courier, Monospace;
+  display: block;
+  font-size: 8pt;
+  padding: 1px 0px 1px 32px;
+}
+.stackTraceButton {
+  font-size: 8pt;
+  margin: 2px 8px 2px 0px;
+  font-weight: normal;
+  font-family: Arial;
+}
+
+.special {
+  font-style: italic;
+}
+.missing, .missing * {
+  background-color: #ff9999;
+  color:#bb5050;
+  text-decoration: line-through;
+}
+.surplus, .surplus * {
+  background-color: #ff9999;
+}
+.footer {
+  text-align: right;
+  margin-top: 40px;
+  font-size: 8pt;
+  width: 100%;
+  color: #999;
+}
+.footer .testTime {
+  padding: 2px 10px 0px 0px;
+}
+
+.idea {
+  font-size: 9pt;
+  color: #888;
+  font-style: italic;	
+}
+.tight li {
+  margin-top: 1px;
+  margin-bottom: 1px; 
+}
+.commentary {
+  float: right;
+  width: 200px;
+  background-color: #ffffd0;
+  padding:8px;
+  border: 3px solid #eeeeb0;	 
+  margin: 10px 0px 10px 10px;	 
+}
+.commentary, .commentary * {
+  font-size: 8pt;
+}
+</style><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link type="text/css" rel="stylesheet" href="../../../../../customConcordion.css" /><link type="text/css" rel="stylesheet" href="../../../../../storyboard.css" /><script type="text/javascript" src="../../../../../storyboard.js"></script></head><body><span class="breadcrumbs"><a href="../Specification.html">MBIE Toilet Calculator Specification</a> &gt; <a href="Calculator.html">MBIE Toilet Calculator</a> &gt;</span><h1>MBIE Toilet Facility Calculator</h1>
+<p>This Test Verify In a Building/ Open Space with known/ unknown people count, Calculate How many toilet pans, basins and urinals to include in a Toilet Facility using MBIE Toilet Facility CalCulator</p>
+<h2>Acceptance Criteria:</h2>
+<pre><code># Generate Result for toilet facility with below option
+  * Option 1 - Unisex toilet facilities
+  * Option 2 - Single sex toilet facilities only
+  * Option 3 - Single sex toilet facilities with urinals for males
+  * Option 4 - Single sex toilet facilities only, plus accessible unisex
+  * Option 5 - Single sex toilet facilities with urinals for males, plus accessible unisex
+# Print and Save Result as pdf for calculated toilet facility in building
+</code></pre>
+<h2>Limitations of the calculator:</h2>
+<pre><code> # The calculator, on its own, will not produce a Building Code compliant solution as it does not cover
+   *  allocation and distribution of accessible toilet facilities
+   *  definition of, or the distribution of unisex toilet facilities
+   *  space requirements for toilets or accessible layouts
+   *  the 'floor area' options are extensive and allow for a number of different building configurations
+   *  Single sex toilet facilities with urinals for males, plus accessible unisex
+   *  calculation of showers
+</code></pre>
+<div concordion:example="mbie-toilet-calculator-home-page-test" id="mbie-toilet-calculator-home-page-test"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block; margin-top: 20px; text-decoration: none; color: #89C;" href="ToiletCalculator[mbie-toilet-calculator-home-page-test]Log.html">Log File</a><p></p>
+<h2>MBIE Toilet Calculator Home Page Test</h2>
+<p>Given Bob The Builder wants to explore Online MBIE Toilet Calculator Facility<br />When Bob navigate to MBIE Toilet Calculator Page<br />Then Bob should be able to see Page loaded with Heading <strong><span concordion:assertEquals="getHomePageHeading()" class="success">Toilet calculator</span></strong><br />And Page Intro message <strong><span concordion:assertEquals="getPageIntroMessage()" class="success">Use the toilet calculator to help work out how many toilet pans, basins and urinals to include in buildings.</span></strong><br />And Toilet Facility Calculator tool with Heading <strong><span concordion:assertEquals="getToiletCalcualtorHeading()" class="success">Calculate the number of toilet facilities here</span></strong></p><hr class="toggle-separator" /><div class="toggle-example-container"><input id="toggleheader0" class="toggle-example" type="checkbox" /><label for="toggleheader0" class="toggle-example scsuccess">Storyboard</label><div class="toggle-example-content"><div class="toggle-box-container"><input id="toggleheader0-0" class="toggle-box" type="checkbox" /><label for="toggleheader0-0" class="toggle-box scsuccess">MBIE Toilet Facility Calculator Home Page Heading Message</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot0.png?version=20210527115827"><img id="Clicking 'Toilet calculator' " class="sizelandscape" src="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot0.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'Toilet calculator' ">Clicking 'Toilet calculator' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot1.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot1.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Completed</p><p class="scdescription" title=""></p></li></ul></div></div><div class="toggle-box-container"><input id="toggleheader0-1" class="toggle-box" type="checkbox" /><label for="toggleheader0-1" class="toggle-box scsuccess">MBIE Toilet Facility Calculator Intro Message</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot2.png?version=20210527115827"><img id="Clicking 'Use the toilet calculator to help work out how many toilet pans, basins and urinals to include in buildings.' " class="sizelandscape" src="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot2.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'Use the toilet calculator to help work out how many toilet pans, basins and urinals to include in buildings.' ">Clicking 'Use the toilet calculator to help work out how many toilet pans, basins and urinals to include in buildings.' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot3.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot3.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Completed</p><p class="scdescription" title=""></p></li></ul></div></div><div class="toggle-box-container"><input id="toggleheader0-2" class="toggle-box" type="checkbox" /><label for="toggleheader0-2" class="toggle-box scsuccess">MBIE Toilet Facility Calculator Tool Heading Message</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot4.png?version=20210527115827"><img id="Clicking 'Calculate the number of toilet facilities here' " class="sizelandscape" src="ToiletCalculator[mbie-toilet-calculator-home-page-test]LogScreenShot4.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'Calculate the number of toilet facilities here' ">Clicking 'Calculate the number of toilet facilities here' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculatorLogScreenShot5.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculatorLogScreenShot5.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Example Completed</p><p class="scdescription" title=""></p></li></ul></div></div></div></div></div>
+<div concordion:example="generate-toilet-facility-result-for-hospital-with-people-capacity-count-unknown-using-toilet-facility-calculator-tool-test" id="generate-toilet-facility-result-for-hospital-with-people-capacity-count-unknown-using-toilet-facility-calculator-tool-test"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block; margin-top: 20px; text-decoration: none; color: #89C;" href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]Log.html">Log File</a><p></p>
+<h2>Generate Toilet Facility Result for Hospital with people capacity count unknown using Toilet Facility Calculator Tool Test</h2>
+<p>Given Bob The Builder wants to use MBIE Toilet Calculator tool to calculate Toilet Facility requirement<br />When Bob open Toilet Facility Calculator and select option people capacity count <strong><span concordion:execute="selectPeopleCount(#TEXT)">unknown</span></strong><br />And Bob selects building type as <strong><span concordion:execute="selectBuildingType(#TEXT)">Hospital</span></strong><br />Then Bob can see Enter applicable measurement form appear<br />When after updating all applicable measurements details <strong><span concordion:execute="completeFormAndSubmit()">Bob Submit the form</span></strong><br />Then Bob should be able to see Toilet Facility Result generated with heading <strong><span concordion:assertEquals="getResultHeading()" class="success">Calculated number of toilet facilities</span></strong><br />And Bob should be able <strong><span concordion:assertTrue="printSaveAndCompareResult()" class="success">print and save result as pdf for calculated toilet facility in building</span></strong></p><hr class="toggle-separator" /><div class="toggle-example-container"><input id="toggleheader1" class="toggle-example" type="checkbox" /><label for="toggleheader1" class="toggle-example scsuccess">Storyboard</label><div class="toggle-example-content"><div class="toggle-box-container"><input id="toggleheader1-0" class="toggle-box" type="checkbox" /><label for="toggleheader1-0" class="toggle-box scsuccess">Select Count Of People for Facility</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot6.png?version=20210527115827"><img id="Clicking 'Calculate the number of toilet facilities here' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot6.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'Calculate the number of toilet facilities here' ">Clicking 'Calculate the number of toilet facilities here' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot7.png?version=20210527115827"><img id="Clicking 'No' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot7.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'No' ">Clicking 'No' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot8.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot8.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Completed</p><p class="scdescription" title=""></p></li></ul></div></div><div class="toggle-box-container"><input id="toggleheader1-1" class="toggle-box" type="checkbox" /><label for="toggleheader1-1" class="toggle-box scsuccess">Select building type as Hospital</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot9.png?version=20210527115827"><img id="Clicking ' ' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot9.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking ' ' ">Clicking ' ' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot10.png?version=20210527115827"><img id="Clicking 'Hospital' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot10.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'Hospital' ">Clicking 'Hospital' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot11.png?version=20210527115827"><img id="Clicking 'Hospital' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot11.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">ToiletCalculatorHomePage</p><p class="scdescription" title="Clicking 'Hospital' ">Clicking 'Hospital' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot12.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot12.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Completed</p><p class="scdescription" title=""></p></li></ul></div></div><div class="toggle-box-container"><input id="toggleheader1-2" class="toggle-box" type="checkbox" /><label for="toggleheader1-2" class="toggle-box scsuccess">Enter applicable measuerment and submit form</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot13.png?version=20210527115827"><img id="Clicking 'Calculate the number of toilet facilities here&#x0A;Is the number of people for the building known?&#x0A;Yes&#x0A;No&#x0A;Hospital&#x0A;Select the building use&#x0A;Enter applicable measurements to calculate occupant density:&#x0A;Dining, beverage and cafeteria spaces&#x0A;m2&#x0A;Enter the floor area&#x0A;Interview rooms&#x0A;m2&#x0A;Enter the floor area&#x0A;Kitchens&#x0A;m2&#x0A;Enter the floor area&#x0A;Laundry and house keeping facilities&#x0A;m2&#x0A;Enter the floor area&#x0A;Lobbies and foyers&#x0A;m2&#x0A;Enter the floor area&#x0A;Offices and staffrooms&#x0A;m2&#x0A;Enter the floor area&#x0A;Personal service facilities&#x0A;m2&#x0A;Enter the floor area&#x0A;Reception areas&#x0A;m2&#x0A;Enter the floor area&#x0A;Toilets and subordinate spaces (no occupants counted)&#x0A;m2&#x0A;Enter the floor area&#x0A;Beds&#x0A;beds&#x0A;Enter the number of beds&#x0A;Reset&#x0A;Submit' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot13.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">HospitalMeasurementPage</p><p class="scdescription" title="Clicking 'Calculate the number of toilet facilities here&#x0A;Is the number of people for the building known?&#x0A;Yes&#x0A;No&#x0A;Hospital&#x0A;Select the building use&#x0A;Enter applicable measurements to calculate occupant density:&#x0A;Dining, beverage and cafeteria spaces&#x0A;m2&#x0A;Enter the floor area&#x0A;Interview rooms&#x0A;m2&#x0A;Enter the floor area&#x0A;Kitchens&#x0A;m2&#x0A;Enter the floor area&#x0A;Laundry and house keeping facilities&#x0A;m2&#x0A;Enter the floor area&#x0A;Lobbies and foyers&#x0A;m2&#x0A;Enter the floor area&#x0A;Offices and staffrooms&#x0A;m2&#x0A;Enter the floor area&#x0A;Personal service facilities&#x0A;m2&#x0A;Enter the floor area&#x0A;Reception areas&#x0A;m2&#x0A;Enter the floor area&#x0A;Toilets and subordinate spaces (no occupants counted)&#x0A;m2&#x0A;Enter the floor area&#x0A;Beds&#x0A;beds&#x0A;Enter the number of beds&#x0A;Reset&#x0A;Submit' ">Clicking 'Calculate the number of toilet facilities here
+Is the number of people for the building known?
+Yes
+No
+Hospital
+Select the building use
+Enter applicable measurements to calculate occupant density:
+Dining, beverage and cafeteria spaces
+m2
+Enter the floor area
+Interview rooms
+m2
+Enter the floor area
+Kitchens
+m2
+Enter the floor area
+Laundry and house keeping facilities
+m2
+Enter the floor area
+Lobbies and foyers
+m2
+Enter the floor area
+Offices and staffrooms
+m2
+Enter the floor area
+Personal service facilities
+m2
+Enter the floor area
+Reception areas
+m2
+Enter the floor area
+Toilets and subordinate spaces (no occupants counted)
+m2
+Enter the floor area
+Beds
+beds
+Enter the number of beds
+Reset
+Submit' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot14.png?version=20210527115827"><img id="Clicking 'Submit' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot14.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">HospitalMeasurementPage</p><p class="scdescription" title="Clicking 'Submit' ">Clicking 'Submit' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot15.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot15.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Completed</p><p class="scdescription" title=""></p></li></ul></div></div><div class="toggle-box-container"><input id="toggleheader1-3" class="toggle-box" type="checkbox" /><label for="toggleheader1-3" class="toggle-box scsuccess">Toilet Facility Calculator Result Genrated Message</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot16.png?version=20210527115827"><img id="Clicking 'Calculated number of toilet facilities' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot16.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">HospitalToiletFacilityResultPage</p><p class="scdescription" title="Clicking 'Calculated number of toilet facilities' ">Clicking 'Calculated number of toilet facilities' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot17.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot17.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Completed</p><p class="scdescription" title=""></p></li></ul></div></div><div class="toggle-box-container"><input id="toggleheader1-4" class="toggle-box" type="checkbox" /><label for="toggleheader1-4" class="toggle-box scsuccess">Print, Save and Compare Result with Source</label><div class="toggle-box-content"><ul><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot18.png?version=20210527115827"><img id="Clicking 'Calculated number of toilet facilities' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot18.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">HospitalToiletFacilityResultPage</p><p class="scdescription" title="Clicking 'Calculated number of toilet facilities' ">Clicking 'Calculated number of toilet facilities' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot19.png?version=20210527115827"><img id="Clicking 'Print' " class="sizelandscape" src="ToiletCalculator[generate-toilet-facility-reTRLHEYTNGTYRL]LogScreenShot19.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">HospitalToiletFacilityResultPage</p><p class="scdescription" title="Clicking 'Print' ">Clicking 'Print' </p></li><li class="storycard"><div class="scimgcontainer"><a href="ToiletCalculatorLogScreenShot20.png?version=20210527115827"><img id="" class="sizelandscape" src="ToiletCalculatorLogScreenShot20.png?version=20210527115827" width="1920" onMouseOver="showScreenPopup(this);this.style.cursor='pointer'" onMouseOut="hideScreenPopup();this.style.cursor='default'" /></a></div><p class="scsummary scsuccess">Example Completed</p><p class="scdescription" title=""></p></li></ul></div></div></div></div></div>
+<div concordion:example="generate-toilet-facility-result-for-museum-with-people-capacity-count-100-using-toilet-facility-calculator-tool-test" id="generate-toilet-facility-result-for-museum-with-people-capacity-count-100-using-toilet-facility-calculator-tool-test"><a style="font-size: 9pt; font-weight: bold; float: right; display: inline-block; margin-top: 20px; text-decoration: none; color: #89C;" href="ToiletCalculator[generate-toilet-facility-reTRMHEYT0GTYRL]Log.html">Log File</a><p></p>
+<h2>Generate Toilet Facility Result for Museum with people capacity count 100 using Toilet Facility Calculator Tool Test</h2>
+<p>Given Jim The Builder wants to use MBIE Toilet Calculator tool to calculate Toilet Facility requirement<br />When Jim open Toilet Facility Calculator and select option people capacity count <strong>known</strong><br />And Jim selects building type as <strong>Museum</strong> with Occupant Count as <strong>100</strong><br />And Jim Submit the form<br />Then Jim should be able to see Toilet Facility Result generated with heading <strong>Calculated number of toilet facilities</strong><br />And Jim should be able [print and save result as pdf for calculated toilet facility in building</p></div><div class="storyboard" style="display: none"><h3 id="StoryboardHeader">Storyboard</h3></div><img id="StoryCardScreenshotPopup" class="screenshot" /><div class="footer">Results generated by <a href="http://www.concordion.org" style="font-weight: bold; text-decoration: none; color: #89C;">Concordion</a><div class="testTime"><a style="font-weight: bold; text-decoration: none; color: #89C;" href="ToiletCalculatorLog.html">Log File</a></div><div class="testTime">in 1m 25s on 27-May-2021 at 11:58:27 NZST</div></div></body></html>
