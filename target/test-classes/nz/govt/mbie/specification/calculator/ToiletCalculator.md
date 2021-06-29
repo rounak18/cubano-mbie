@@ -43,5 +43,5 @@ When Jim open Toilet Facility Calculator and select option people capacity count
 And Jim selects building type as **Museum** with Occupant Count as **100** 
 And Jim Submit the form
 Then Jim should be able to see Toilet Facility Result generated with heading  **Calculated number of toilet facilities**
-And Jim should be able [print and save result as pdf for calculated toilet facility in building
+And Jim should be able print and save result as pdf for calculated toilet facility in building
 
